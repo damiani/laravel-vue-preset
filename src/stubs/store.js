@@ -55,10 +55,6 @@ export default {
             options.data = Object.assign({}, options.data, window[options.js_namespace]);
         }
 
-        window.store = new Vue(
-            Object.assign(store, {
-                data: options.data,
-            });
-        );
+        window.store = new Vue(Object.assign(store, { data: options.data }));
     },
 }
