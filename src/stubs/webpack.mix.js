@@ -1,16 +1,16 @@
 let mix = require('laravel-mix');
 require('laravel-mix-purgecss');
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .postCss('resources/assets/css/app.css', 'public/css')
-    .options({
+mix.options({
+        processCssUrls: false,
         postCss: [
-            require('postcss-import')(),
             require('tailwindcss')(),
-            require('postcss-cssnext')({
-                features: { autoprefixer: false }
-            }),
         ]
     })
-    .purgeCss()
-    .version();
+    .js('resources/assets/js/app.js', 'public/js')
+    .less('resources/assets/less/app.less', 'public/css')
+    .purgeCss();
+
+if (mix.inProduction()) {
+    mix.version();
+}

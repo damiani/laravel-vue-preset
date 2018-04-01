@@ -11,7 +11,7 @@ class PresetServiceProvider extends ServiceProvider
     {
         PresetCommand::macro('damiani', function ($command) {
             Preset::install();
-            $command->info('Laravel+Vue preset has been installed...woohoo!');
+            $command->info("Keith's Laravel+Vue preset has been installed!");
         });
     }
 }

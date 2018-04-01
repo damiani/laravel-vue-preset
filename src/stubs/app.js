@@ -1,26 +1,18 @@
-/**
- * JS dependencies
- */
+/* JS dependencies */
 require('./bootstrap');
 
-/**
- * Vue.js
- */
+/* Vue.js */
 window.Vue = require('vue');
 Vue.config.productionTip = false;
 
-/**
- * Store
- */
+/* Store */
 import Store from './store';
 Vue.use(Store, {
     data: {},
     js_namespace: 'vue_app',
 });
 
-/**
- * VM
- */
+/* Vue VM */
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({

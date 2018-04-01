@@ -25,9 +25,9 @@ class Preset extends BasePreset
     {
         return array_merge([
             'laravel-mix-purgecss' => '^1.0',
-            'postcss-cssnext' => '^3.1',
-            'postcss-import' => '^11.0',
-            'tailwindcss' => '>=0.1.0',
+            'less' => '^3.0.1',
+            'less-loader' => '^4.1.0',
+            'tailwindcss' => '>=0.5.0',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
@@ -48,12 +48,12 @@ class Preset extends BasePreset
             $files->delete(public_path('js/app.js'));
             $files->delete(public_path('css/app.css'));
 
-            if (! $files->isDirectory($directory = resource_path('assets/css'))) {
+            if (! $files->isDirectory($directory = resource_path('assets/less'))) {
                 $files->makeDirectory($directory, 0755, true);
             }
         });
 
-        copy(__DIR__.'/stubs/resources/assets/css/app.css', resource_path('assets/css/app.css'));
+        copy(__DIR__.'/stubs/resources/assets/css/app.less', resource_path('assets/less/app.less'));
     }
 
     protected static function updateJavaScript()
