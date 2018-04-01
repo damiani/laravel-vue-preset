@@ -53,7 +53,7 @@ class Preset extends BasePreset
             }
         });
 
-        copy(__DIR__.'/stubs/resources/assets/css/app.less', resource_path('assets/less/app.less'));
+        copy(__DIR__.'/stubs/resources/assets/less/app.less', resource_path('assets/less/app.less'));
     }
 
     protected static function updateJavaScript()
