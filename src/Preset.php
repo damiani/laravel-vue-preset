@@ -24,7 +24,7 @@ class Preset extends BasePreset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'laravel-mix-purgecss' => '^1.0',
+            'laravel-mix-purgecss' => '^2.0.0',
             'less' => '^3.0.1',
             'less-loader' => '^4.1.0',
             'tailwindcss' => '>=0.5.0',
