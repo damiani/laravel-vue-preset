@@ -24,13 +24,14 @@ class Preset extends BasePreset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'laravel-mix-purgecss' => '^2.0.0',
+            'laravel-mix-purgecss' => '^4.1.0',
             'less' => '^3.0.1',
             'less-loader' => '^4.1.0',
-            'tailwindcss' => '>=0.5.0',
+            'tailwindcss' => '^0.7.4',
         ], Arr::except($packages, [
             'bootstrap',
-            'bootstrap-sass',
+            'sass',
+            'sass-loader',
             'jquery',
             'popper.js',
         ]));
@@ -58,9 +59,9 @@ class Preset extends BasePreset
 
     protected static function updateJavaScript()
     {
-        copy(__DIR__.'/stubs/app.js', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/store.js', resource_path('assets/js/store.js'));
-        copy(__DIR__.'/stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/stubs/app.js', resource_path('js/app.js'));
+        copy(__DIR__.'/stubs/store.js', resource_path('js/store.js'));
+        copy(__DIR__.'/stubs/bootstrap.js', resource_path('js/bootstrap.js'));
     }
 
     protected static function updateTemplates()
