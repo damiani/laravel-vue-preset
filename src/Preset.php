@@ -28,6 +28,7 @@ class Preset extends BasePreset
             'less' => '^3.0.1',
             'less-loader' => '^4.1.0',
             'tailwindcss' => '^0.7.4',
+            'vue-template-compiler' => '^2.6.5',
         ], Arr::except($packages, [
             'bootstrap',
             'sass',
