@@ -46,16 +46,16 @@ class Preset extends BasePreset
     protected static function updateStyles()
     {
         tap(new Filesystem, function ($files) {
-            $files->deleteDirectory(resource_path('assets/sass'));
+            $files->deleteDirectory(resource_path('sass'));
             $files->delete(public_path('js/app.js'));
             $files->delete(public_path('css/app.css'));
 
-            if (! $files->isDirectory($directory = resource_path('assets/less'))) {
+            if (! $files->isDirectory($directory = resource_path('less'))) {
                 $files->makeDirectory($directory, 0755, true);
             }
         });
 
-        copy(__DIR__.'/stubs/resources/assets/less/app.less', resource_path('assets/less/app.less'));
+        copy(__DIR__.'/stubs/resources/less/app.less', resource_path('less/app.less'));
     }
 
     protected static function updateJavaScript()
