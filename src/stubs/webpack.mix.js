@@ -7,8 +7,8 @@ mix.options({
             require('tailwindcss')(),
         ]
     })
-    .js('resources/assets/js/app.js', 'public/js')
-    .less('resources/assets/less/app.less', 'public/css')
+    .js('resources/js/app.js', 'public/js')
+    .less('resources/less/app.less', 'public/css')
     .purgeCss();
 
 if (mix.inProduction()) {
